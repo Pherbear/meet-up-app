@@ -1,7 +1,25 @@
+'use client';
 import React from 'react'
+import Box from '@mui/material/Box';
+import BottomNavigation from '@mui/material/BottomNavigation';
+import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 
-export default function BottomNavbar() {
+function HandleClick({event, value}) {
+
+}
+
+export default function BottomNavbar({ value }) {
   return (
-    <div>bottomnavbar</div>
+    <Box className = 'bottomNav' >
+      <BottomNavigation 
+        showLabels
+        value = {value}
+        onChange ={(event, value) =>  {
+          HandleClick(event, value);
+        }}
+      >
+        <BottomNavigationAction label = "home"/> 
+      </BottomNavigation>
+    </Box>
   )
 }
